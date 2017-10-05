@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/dubin555/Kafka-Insight.svg?branch=master)](https://travis-ci.org/dubin555/Kafka-Insight)
 ![](https://img.shields.io/badge/language-java-orange.svg)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/dubin555/Kafka-Insight/master/LICENSE)
 # Kafka-Insight
