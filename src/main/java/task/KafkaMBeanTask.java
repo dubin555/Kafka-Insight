@@ -100,20 +100,21 @@ public class KafkaMBeanTask implements Runnable{
      */
     @Override
     public void run() {
-        try {
-            List<MBeanInfo> r = runMBeanTask();
-            MBeansDao mBeansDao = new MBeansInfluxDBDaoImpl(r);
-            mBeansDao.insert();
-        } catch (Exception e) {
-            logger.error("MBean service error " + e.getMessage());
-
-        }
-        finally {
+        while (true) {
             try {
-                // sleep for a while anyway
-                Thread.sleep(secondsToSleep * 1000);
-            } catch (InterruptedException e) {
-                logger.error("Thread sleep error " + e.getMessage());
+                List<MBeanInfo> r = runMBeanTask();
+                MBeansDao mBeansDao = new MBeansInfluxDBDaoImpl(r);
+                mBeansDao.insert();
+            } catch (Exception e) {
+                logger.error("MBean service error " + e.getMessage());
+
+            } finally {
+                try {
+                    // sleep for a while anyway
+                    Thread.sleep(secondsToSleep * 1000);
+                } catch (InterruptedException e) {
+                    logger.error("Thread sleep error " + e.getMessage());
+                }
             }
         }
     }

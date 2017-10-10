@@ -3,6 +3,8 @@
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/dubin555/Kafka-Insight/master/LICENSE)
 # Kafka-Insight
 This code is for monitoring Kafka offsets
+What it looks like? You can modify it anyway you want in Grafana, here is just my first version for demo.
+![Consumer offset and mBean monitor](https://github.com/dubin555/Kafka-Insight/png/consumer-offsets-demo1.png)
 ## Install
 ### Requirement
 * Kafka 0.10.x

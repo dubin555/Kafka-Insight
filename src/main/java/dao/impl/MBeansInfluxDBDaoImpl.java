@@ -51,7 +51,7 @@ public class MBeansInfluxDBDaoImpl implements MBeansDao {
                         .tag("label", label)
                         .tag("topic", topic)
                         .build();
-                Point point = Point.measurement("offsetsConsumer")
+                Point point = Point.measurement("mBeanMetric")
                         .time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
 //                        .time(timestamp, TimeUnit.MILLISECONDS)
                         .addField("oneMinuteRate", oneMinute)
